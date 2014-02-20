@@ -30,6 +30,7 @@ class Engine < Server
     # re-dispatch the previously dispatched files to the new master
     previous = @queued_test_files.to_a
     @queued_test_files.clear
+    rerun_failed_test_files
     run_test_files previous
   end
 
